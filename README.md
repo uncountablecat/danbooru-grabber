@@ -1,5 +1,7 @@
 # Danbooru-grabber
 
+**__健全な生活を送りましょう！__**d=(´▽｀)=b
+
 **__Currently you would have to open the `grabber.py` and use text editor to change line 10 before using__**
 #### About
 This is a simple Python script that downloads pictures from [Danbooru](http://danbooru.donmai.us/). It downloads 50 pictures with tags pre-specified by users and saves the pictures to the folder named after the tags users input. **You may end up downloading pictures that are NSFW depending on the tags you use**
