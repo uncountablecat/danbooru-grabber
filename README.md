@@ -1,6 +1,6 @@
 # Danbooru-grabber
 
-**__健全な生活を送りましょう！__**d=(´▽｀)=b
+Update 2015/12/07: Now, you can download all the pictures with certain tags. Simply type in a very large number like 1000. It will automatically stop when all pictures are downloaded. Also you will be able to download more than 100 pictures at once now.
 
 **__Currently you would have to open the `grabber.py` and use text editor to change line 10 before using__**
 #### About
