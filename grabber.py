@@ -19,8 +19,8 @@ def generate_tag_argv(tagList):
 	return tag_argv
 
 # request json, get urls of pictures and download them
-def grabber(tag_argv,pic_num):
-	r = requests.get('https://danbooru.donmai.us/posts.json?tags='+tag_argv+'&limit='+str(pic_num))
+def grabber(tag_argv,page_num):
+	r = requests.get('https://danbooru.donmai.us/posts.json?tags='+tag_argv+'&page='+str(page_num))
 	streams = r.json()
 
 	# check if directory already exists
@@ -37,19 +37,27 @@ def grabber(tag_argv,pic_num):
 	for address in target:
 		urllib.urlretrieve(address,danbooru_folder+tag_argv+'/'+address.split('/')[-1])
 
-pic_num = input('Enter the number of posts you would like to download:')
-while (pic_num >100):
-	print('The number is not valid!')
-	print('Danbooru only allows 100 pictures at most!')
-	u1 = u'健全な生活を送りましょう！'
-	print u1
-	pic_num = input('Enter the number of posts you would like to download:')
 
-tagList = raw_input('Enter tags,separated by space:') 
-tagList = tagList.split(' ')
-tag_argv = generate_tag_argv(tagList)
-grabber(tag_argv,pic_num)
+def main():
+	page_num = input('Enter the number of pages you want to download. To download all, simply enter a super large number:')
+	taginput = raw_input('Enter tags,separated by space:') 
 
-print('Download successful!')
-u2 = u'どうぞ、召し上がってください！'
-print u2
+	n = 1
+	while n <= page_num:
+		tagList = taginput.split(' ')
+		tag_argv = generate_tag_argv(tagList)
+		grabber(tag_argv,n)
+		n = n + 1
+
+	tagList = tagList.split(' ')
+	tag_argv = generate_tag_argv(tagList)
+	grabber(tag_argv,pic_num)
+
+
+	print('Download successful!')
+	u2 = u'どうぞ、召し上がってください！'
+	print u2
+
+
+if __name__ == '__main__':
+	main()
