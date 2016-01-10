@@ -9,7 +9,7 @@ status = 'not done yet'
 # change this to your danbooru folder
 # it might look something like this: '/users/YourUserName/DanbooruPics'
 # make sure the folder already exists!
-danbooru_folder = '/Users/chaoguo/gelboorupics/'
+danbooru_folder = '/Users/chaoguo/Pictures/'
 
 # generate tag argument to be used in url and folder creation
 def generate_tag_argv(tagList):
@@ -38,7 +38,7 @@ def grabber(tag_argv,page_num):
 		for post in streams:
 			if 'file_url' in post:
 				url.append(post['file_url'])
-				target = ['https://danbooru.donmai.us'+x for x in url]
+		target = ['https://danbooru.donmai.us'+x for x in url]
 
 		# download
 		for address in target:
