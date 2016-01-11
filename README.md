@@ -1,6 +1,6 @@
 # Danbooru-grabber
 
-_Upcoming update_: explicit content filter.
+_Upcoming update_: As some users pointed out, Danbooru limits the number of tags up to 2. 
 
 _Update 2015/12/07_: Now, you can download all the pictures with certain tags. Simply type in a very large number like 1000. It will automatically stop when all pictures are downloaded. Also you will be able to download more than 100 pictures at once now.
 
